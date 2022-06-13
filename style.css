@@ -67,6 +67,15 @@ main {
     border: var(--border-regular);
     transition: .6s ease;
 }
+select {
+    border-radius: var(--border-radius);
+    padding: 4px 8px;
+    margin: 8px auto;
+    outline: none;
+    text-transform: uppercase;
+    text-align: center;
+    width: 50%;
+}
 .box p:not(.price) {
     width: 80%;
 }

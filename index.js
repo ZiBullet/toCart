@@ -22,7 +22,8 @@ function createMyDeal(arr) {
         let price = document.createElement('p')
         let btnBox = document.createElement('div')
         let btn = document.createElement('button')
-
+        let select = document.createElement('select')
+       
         // Decorating each of them
 
         box.classList.add('box')
@@ -32,7 +33,21 @@ function createMyDeal(arr) {
         h3.innerHTML = deal.model
         info.innerHTML = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo corporis, aliquid cum sunt voluptates optio nulla et voluptatum vel laboriosam modi quod nobis dolore quae. Eos asperiores beatae sunt. Eum perspiciatis numquam alias magnam atque cum perferendis consequuntur, incidunt esse.'
         price.classList.add('price')
-        price.innerHTML = deal.price.cash + '$'
+        for (let key in deal.price) {
+            let option = new Option(key, deal.price)
+            select.append(option)
+
+            // Tried to add price changing which depends on its method, but I FAILED
+
+            // if (key == 'cash') {
+            //     price.innerHTML = deal.price.cash
+            // } else if (key = 'credit') {
+            //     price.innerHTML = deal.price.credit
+            // } else {
+            //     price.innerHTML = deal.price.card
+            // }
+            
+        }
         btnBox.classList.add('btn')
         btn.classList.add('toCart')
         btn.innerHTML = 'To cart'
@@ -40,7 +55,7 @@ function createMyDeal(arr) {
         container.append(box)
         box.append(heading, description)
         heading.append(img)
-        description.append(h3, info, price, btnBox)
+        description.append(h3, info, select, price, btnBox)
         btnBox.append(btn)
 
         btn.onclick = () => {
