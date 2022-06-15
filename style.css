@@ -24,6 +24,7 @@
 header {
     display: flex;
     padding: 12px 20px;
+    gap: 15px;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -32,7 +33,7 @@ header {
     backdrop-filter: blur(10px);
     background: rgba(164, 163, 163, 0.8);
 }
-.showCart {
+.showCart, .goBack {
     cursor: pointer;
     font-weight: 700;
     font-size: 16px;

@@ -1,11 +1,14 @@
-// This my cart, but it is not done. It is on pending
+// This my cart
 const showCart = document.querySelector('.showCart')
 let myCart = []
+
+let goBack = document.querySelector('.goBack')
 
 // Container from my HTML document
 const container = document.querySelector('.container')
 
 function createMyDeal(arr) {
+  container.innerHTML = ''
     for (let deal of arr) {
         // Creating all of box elements
 
@@ -46,7 +49,6 @@ function createMyDeal(arr) {
             // } else {
             //     price.innerHTML = deal.price.card
             // }
-            
         }
         btnBox.classList.add('btn')
         btn.classList.add('toCart')
@@ -59,19 +61,17 @@ function createMyDeal(arr) {
         btnBox.append(btn)
 
         btn.onclick = () => {
-            myCart.push(deal)
-            console.log(myCart);
+          myCart.push(deal)
         }
     }
 }
-
 let cars = [
-    {
-      id: Math.random(),
-      model: "maluba 2",
-      company: "chevrolette",
-      engine: 2.2,
-      img: "https://1.bp.blogspot.com/-6-s2BwymkcA/W4qoq7oh_sI/AAAAAAAA1AE/G7um1RohqHsx1X2GAJ-8h-aInt-TU_K3ACEwYBhgL/w800/2018_chevrolet_malibu_00.jpg",
+  {
+    id: Math.random(),
+    model: "maluba 2",
+    company: "chevrolette",
+    engine: 2.2,
+    img: "https://1.bp.blogspot.com/-6-s2BwymkcA/W4qoq7oh_sI/AAAAAAAA1AE/G7um1RohqHsx1X2GAJ-8h-aInt-TU_K3ACEwYBhgL/w800/2018_chevrolet_malibu_00.jpg",
       price: {
         cash: 24000,
         credit: 30000,
@@ -237,11 +237,13 @@ let cars = [
       },
     },
   ];
-
-createMyDeal(cars)
-
+  createMyDeal(cars)
 showCart.onclick = () => {
-    createMyDeal(myCart)
+  createMyDeal(myCart)
 }
+goBack.onclick = () => {
+  createMyDeal(cars)
+}
+
 
 
